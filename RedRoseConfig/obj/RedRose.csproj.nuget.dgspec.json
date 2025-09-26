@@ -1,0 +1,221 @@
+{
+  "format": 1,
+  "restore": {
+    "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj": {}
+  },
+  "projects": {
+    "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj",
+        "projectName": "CriFs.V2.Hook.Interfaces",
+        "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj",
+        "packagesPath": "/home/raven/.nuget/packages/",
+        "outputPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/raven/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "CriFsV2Lib.Definitions": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.119/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/P5R.CostumeFramework.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/P5R.CostumeFramework.Interfaces.csproj",
+        "projectName": "P5R.CostumeFramework.Interfaces",
+        "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/P5R.CostumeFramework.Interfaces.csproj",
+        "packagesPath": "/home/raven/.nuget/packages/",
+        "outputPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/raven/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.119/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj",
+        "projectName": "RedRose",
+        "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj",
+        "packagesPath": "/home/raven/.nuget/packages/",
+        "outputPath": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/raven/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj": {
+                "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj"
+              },
+              "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/P5R.CostumeFramework.Interfaces.csproj": {
+                "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/P5R.CostumeFramework/P5R.CostumeFramework.Interfaces/P5R.CostumeFramework.Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Reloaded.Mod.Interfaces": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Reloaded.SharedLib.Hooks": {
+              "target": "Package",
+              "version": "[1.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.119/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

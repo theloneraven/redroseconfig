@@ -1,0 +1,119 @@
+﻿using RedRose.Template.Configuration;
+using Reloaded.Mod.Interfaces.Structs;
+using System.ComponentModel;
+using CriFs.V2.Hook;
+using CriFs.V2.Hook.Interfaces;
+using System.Reflection;
+using System.ComponentModel.DataAnnotations;
+
+namespace RedRose.Configuration
+{
+    public class Config : Configurable<Config>
+    {
+        public enum Bustupenum
+        {
+            Default,
+            Legacy,
+        }
+
+        public enum FuukaDressenum
+        {
+            Off,
+            WhiteRibbon,
+            BlueRibbon,
+        }
+
+        public enum Tracksuitenum
+        {
+            Off,
+            BlackTracksuit,
+            ConceptArt,
+        }
+
+        public enum PTenum
+        {
+            Off,
+            PureWhite,
+            RedandWhite,
+        }
+
+        public enum AOAenum
+        {
+            Off,
+            Default,
+            Smug,
+        }
+
+        public enum Menuenum
+        {
+            L7M3,
+            Neptune,
+        }
+
+
+        [Category("Bustups")]
+        [DisplayName("Bustups")]
+        [Description("Check mod page for differences.")]
+        [DefaultValue(Bustupenum.Default)]
+        [Display(Order = 1)]
+        public Bustupenum Bustup { get; set; }
+
+        [Category("Outfits")]
+        [DisplayName("Blue Dress over Winter Casual")]
+        [Description("Sumire's blue dress over Kasumi's winter casual. Not recommended for story reasons.")]
+        [DefaultValue(false)]
+        [Display(Order = 2)]
+        public bool BlueDress { get; set; } = false;
+
+        [Category("Outfits")]
+        [DisplayName("Fuuka Dress over Summer Casual")]
+        [Description("Fuuka's blue dress over summer casual. Select the blue or white ribbon.")]
+        [DefaultValue(FuukaDressenum.Off)]
+        [Display(Order = 3)]
+        public FuukaDressenum FuukaDress { get; set; }
+
+        [Category("Outfits")]
+        [DisplayName("Recolored tracksuit over red tracksuit")]
+        [Description("Kasumi's black tracksuit or concept art tracksuit over her school uniform tracksuit.")]
+        [DefaultValue(Tracksuitenum.Off)]
+        [Display(Order = 4)]
+        public Tracksuitenum Tracksuit { get; set; }
+
+        [Category("Outfits")]
+        [DisplayName("Lawson Outfit over 777 uniform")]
+        [Description("Yeah")]
+        [DefaultValue(false)]
+        [Display(Order = 5)]
+        public bool Lawson { get; set; } = false;
+
+        [Category("Outfits")]
+        [DisplayName("Phantom Thief Outfit Overhaul")]
+        [Description("Overhauls Kasumi's PT outfit with a a gold and whtie version or red, gold, and white version.")]
+        [DefaultValue(PTenum.Off)]
+        [Display(Order = 6)]
+        public PTenum PTOutfit { get; set; }
+
+        [Category("Misc")]
+        [DisplayName("No AOA Art")]
+        [Description("No AOA art. Just shows the model.")]
+        [DefaultValue(AOAenum.Off)]
+        [Display(Order = 7)]
+        public AOAenum NoAOA { get; set; }
+
+        [Category("Misc")]
+        [DisplayName("Menu Art")]
+        [Description("Choose the style of art you see in the menus")]
+        [DefaultValue(Menuenum.L7M3)]
+        [Display(Order = 8)]
+        public Menuenum Menu { get; set; }
+    }
+
+    /// <summary>
+    /// Allows you to override certain aspects of the configuration creation process (e.g. create multiple configurations).
+    /// Override elements in <see cref="ConfiguratorMixinBase"/> for finer control.
+    /// </summary>
+    public class ConfiguratorMixin : ConfiguratorMixinBase
+    {
+        // 
+    }
+}
