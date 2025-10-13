@@ -40,16 +40,25 @@ namespace RedRose
             if (_configuration.Bustup == Config.Bustupenum.Legacy)
             {
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "Bustup" , "Legacy"),
+                    Path.Combine("OptionalModFiles", "Bustup", "Legacy"),
                     modDir, criFsApi, modId
                 );
             }
 
-            // Blue Dress
-            if (_configuration.BlueDress)
+            // Winter Casual
+            if (_configuration.WinterCasual == Config.WinterCasualenum.Yukari ||
+                _configuration.WinterCasual == Config.WinterCasualenum.Yukiko ||
+                _configuration.WinterCasual == Config.WinterCasualenum.BlueDress)
             {
+                string selected = _configuration.WinterCasual switch
+                {
+                    Config.WinterCasualenum.Yukari => "Yukari",
+                    Config.WinterCasualenum.Yukiko => "Yukiko",
+                    _ => "BlueDress"
+                };
+
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "BlueDress"),
+                    Path.Combine("OptionalModFiles", "WinterCasual", selected),
                     modDir, criFsApi, modId
                 );
             }
@@ -65,9 +74,26 @@ namespace RedRose
                         Path.Combine("OptionalModFiles", "FuukaDress", selected),
                         modDir, criFsApi, modId
                      );
-                }
-                
+            }
 
+             // Midwinter Uniform
+            if (_configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise)
+            {
+                BindAllFilesIn(
+                    Path.Combine("OptionalModFiles", "MidwinterUniform", "Rise"),
+                    modDir, criFsApi, modId
+                );
+            }
+
+            // Midwinter Casual
+            if (_configuration.MidwinterCasual == Config.MidwinterCasualenum.Rise)
+            {
+                BindAllFilesIn(
+                    Path.Combine("OptionalModFiles", "MidwinterCasual", "Rise"),
+                    modDir, criFsApi, modId
+                );
+            }
+            
             // Tracksuit 
             if (_configuration.Tracksuit == Config.Tracksuitenum.BlackTracksuit ||
                 _configuration.Tracksuit == Config.Tracksuitenum.ConceptArt)
@@ -79,14 +105,23 @@ namespace RedRose
                         Path.Combine("OptionalModFiles", "Tracksuit", selected),
                         modDir, criFsApi, modId
                      );
-                }
+            }
 
 
             // Lawson
             if (_configuration.Lawson)
             {
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles" , "Lawson"),
+                    Path.Combine("OptionalModFiles", "Lawson"),
+                    modDir, criFsApi, modId
+                );
+            }
+
+            // Menu Art
+            if (_configuration.Menu == Config.Menuenum.Neptune)
+            {
+                BindAllFilesIn(
+                    Path.Combine("OptionalModFiles", "Menu", "Neptune"),
                     modDir, criFsApi, modId
                 );
             }
@@ -104,29 +139,21 @@ namespace RedRose
                 
             }
 
-            // Menu Art
-            if (_configuration.Menu == Config.Menuenum.Neptune)
-            {
-                BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "Menu" , "Neptune"),
-                    modDir, criFsApi, modId
-                );
-            }
-
             // PT Outfit
             if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
                 _configuration.PTOutfit == Config.PTenum.RedandWhite)
             {
-            string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+                string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
 
-             BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "PTOutfit" , selected , "Bind"),
-                    modDir, criFsApi, modId
-                );
+                BindAllFilesIn(
+                       Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bind"),
+                       modDir, criFsApi, modId
+                   );
 
-                var costumesFolder = Path.Combine(modDir, "OptionalModFiles", "PTOutfit" , selected , "CF");
+                var costumesFolder = Path.Combine(modDir, "OptionalModFiles", "PTOutfit", selected, "CF");
                 costumeApi.AddCostumesFolder(modDir, costumesFolder);
             }
+            
         }
 
         /// <summary>

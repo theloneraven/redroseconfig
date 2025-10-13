@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedRose")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02505ab60f00e22ac832936c0d115dc91ed23898")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bf8815b78af715caeaff52b87ca487bcae9b31d")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedRose")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedRose")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

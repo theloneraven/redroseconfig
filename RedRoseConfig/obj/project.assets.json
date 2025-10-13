@@ -165,7 +165,7 @@
     ]
   },
   "packageFolders": {
-    "/home/raven/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -173,16 +173,17 @@
       "projectUniqueName": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj",
       "projectName": "RedRose",
       "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj",
-      "packagesPath": "/home/raven/.nuget/packages/",
+      "packagesPath": "/root/.nuget/packages/",
       "outputPath": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/raven/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -202,7 +203,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net7.0": {
@@ -244,7 +251,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.119/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.110/RuntimeIdentifierGraph.json"
       }
     }
   }
