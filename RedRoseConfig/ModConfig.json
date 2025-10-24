@@ -2,7 +2,7 @@
   "ModId": "p5rpc.models.redrose",
   "ModName": "Red Rose Alt Models",
   "ModAuthor": "theloneraven",
-  "ModVersion": "1.1.0",
+  "ModVersion": "1.2.0",
   "ModDescription": "A red-eyed and red-haired Kasumi for use with Rose and Violet",
   "ModDll": "RedRose.dll",
   "ModIcon": "true.png",
@@ -43,6 +43,15 @@
     },
     "GitHubDependencies": {
       "IdToConfigMap": {
+        "crifs.v2.hook": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
+        },
         "P5R.CostumeFramework": {
           "Config": {
             "UserName": "RyoTune",
@@ -51,6 +60,15 @@
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "P5R.CostumeFramework.ReleaseMetadata.json"
+        },
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         },
         "reloaded.universal.fileemulationframework.pak": {
           "Config": {
@@ -70,6 +88,15 @@
           },
           "ReleaseMetadataName": "SPD.File.Emulator.ReleaseMetadata.json"
         },
+        "Reloaded.Memory.SigScan.ReloadedII": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Memory.SigScan",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
+        },
         "BGME.Framework": {
           "Config": {
             "UserName": "RyoTune",
@@ -88,15 +115,6 @@
           },
           "ReleaseMetadataName": "BGME.Framework.API.ReleaseMetadata.json"
         },
-        "crifs.v2.hook": {
-          "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
-        },
         "p5rpc.lib": {
           "Config": {
             "UserName": "AnimatedSwine37",
@@ -114,24 +132,6 @@
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "p5rpc.modloader.ReleaseMetadata.json"
-        },
-        "Reloaded.Memory.SigScan.ReloadedII": {
-          "Config": {
-            "UserName": "Reloaded-Project",
-            "RepositoryName": "Reloaded.Memory.SigScan",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
-        },
-        "reloaded.sharedlib.hooks": {
-          "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
-            "UseReleaseTag": true,
-            "AssetFileName": "reloaded.sharedlib.hooks.zip"
-          },
-          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         },
         "reloaded.universal.fileemulationframework.bf": {
           "Config": {
@@ -259,8 +259,10 @@
   },
   "IsUniversalMod": false,
   "ModDependencies": [
+    "crifs.v2.hook",
     "P5R.CostumeFramework",
     "p5rpc.kasumiasprotag",
+    "reloaded.sharedlib.hooks",
     "reloaded.universal.fileemulationframework.pak",
     "reloaded.universal.fileemulationframework.spd"
   ],

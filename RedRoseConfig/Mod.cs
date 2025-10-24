@@ -77,10 +77,14 @@ namespace RedRose
             }
 
              // Midwinter Uniform
-            if (_configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise)
+            if (_configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise ||
+                _configuration.MidwinterUniform == Config.MidwinterUniformenum.NoGlovesNoScarf)
             {
+                string selected =
+                    _configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise ? "Rise" : "NoGlovesNoScarf";
+
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "MidwinterUniform", "Rise"),
+                    Path.Combine("OptionalModFiles", "MidwinterUniform", selected),
                     modDir, criFsApi, modId
                 );
             }
@@ -90,6 +94,15 @@ namespace RedRose
             {
                 BindAllFilesIn(
                     Path.Combine("OptionalModFiles", "MidwinterCasual", "Rise"),
+                    modDir, criFsApi, modId
+                );
+            }
+
+            // Summer Uniform
+            if (_configuration.SummerUniform == Config.SummerUniformenum.WhiteShirt)
+            {
+                BindAllFilesIn(
+                    Path.Combine("OptionalModFiles", "SummerUniform", "WhiteShirt"),
                     modDir, criFsApi, modId
                 );
             }
