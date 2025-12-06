@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "CriFsV2Lib.Definitions/1.1.0": {
         "type": "package",
         "compile": {
@@ -57,7 +57,7 @@
           }
         }
       },
-      "CriFs.V2.Hook.Interfaces/1.0.0": {
+      "CriFs.V2.Hook.Interfaces/1.1.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -72,7 +72,7 @@
       },
       "P5R.CostumeFramework.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/P5R.CostumeFramework.Interfaces.dll": {}
         },
@@ -92,8 +92,8 @@
         ".signature.p7s",
         "crifsv2lib.definitions.1.1.0.nupkg.sha512",
         "crifsv2lib.definitions.nuspec",
-        "lib/net7.0/CriFsV2Lib.Definitions.dll",
-        "lib/net7.0/CriFsV2Lib.Definitions.xml"
+        "lib/net8.0/CriFsV2Lib.Definitions.dll",
+        "lib/net8.0/CriFsV2Lib.Definitions.xml"
       ]
     },
     "Reloaded.Hooks.Definitions/1.11.0": {
@@ -145,7 +145,7 @@
         "reloaded.sharedlib.hooks.nuspec"
       ]
     },
-    "CriFs.V2.Hook.Interfaces/1.0.0": {
+    "CriFs.V2.Hook.Interfaces/1.1.0": {
       "type": "project",
       "path": "../Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj",
       "msbuildProject": "../Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj"
@@ -157,8 +157,8 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "CriFs.V2.Hook.Interfaces >= 1.0.0",
+    "net8.0": [
+      "CriFs.V2.Hook.Interfaces >= 1.1.0",
       "P5R.CostumeFramework.Interfaces >= 1.0.0",
       "Reloaded.Mod.Interfaces >= 2.4.0",
       "Reloaded.SharedLib.Hooks >= 1.9.0"
@@ -180,15 +180,15 @@
         "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj": {
               "projectPath": "/run/media/raven/Josuke/Modding/redroseconfig/Interfaces/CriFs.V2.Hook.ReloadedII/Interfaces/CriFs.V2.Hook.Interfaces/CriFs.V2.Hook.Interfaces.csproj"
@@ -212,8 +212,8 @@
       "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Reloaded.Mod.Interfaces": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -236,22 +236,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

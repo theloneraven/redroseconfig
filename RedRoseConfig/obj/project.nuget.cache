@@ -1,15 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HrFdhIU5/o0=",
+  "dgSpecHash": "UIbSe/iWJCs=",
   "success": true,
   "projectFilePath": "/run/media/raven/Josuke/Modding/redroseconfig/RedRoseConfig/RedRose.csproj",
   "expectedPackageFiles": [
     "/root/.nuget/packages/crifsv2lib.definitions/1.1.0/crifsv2lib.definitions.1.1.0.nupkg.sha512",
     "/root/.nuget/packages/reloaded.hooks.definitions/1.11.0/reloaded.hooks.definitions.1.11.0.nupkg.sha512",
     "/root/.nuget/packages/reloaded.mod.interfaces/2.4.0/reloaded.mod.interfaces.2.4.0.nupkg.sha512",
-    "/root/.nuget/packages/reloaded.sharedlib.hooks/1.9.0/reloaded.sharedlib.hooks.1.9.0.nupkg.sha512",
-    "/root/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
-    "/root/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
+    "/root/.nuget/packages/reloaded.sharedlib.hooks/1.9.0/reloaded.sharedlib.hooks.1.9.0.nupkg.sha512"
   ],
   "logs": []
 }

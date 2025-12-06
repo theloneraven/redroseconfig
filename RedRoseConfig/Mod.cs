@@ -37,12 +37,42 @@ namespace RedRose
             if (costumeCtl == null || !costumeCtl.TryGetTarget(out var costumeApi)) { _logger.WriteLine("Costume API missing → Costumes broken.", System.Drawing.Color.Red); return; }
 
             // Bustups
-            if (_configuration.Bustup == Config.Bustupenum.Legacy)
             {
-                BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "Bustup", "Legacy"),
-                    modDir, criFsApi, modId
-                );
+                switch (_configuration.Bustup)
+                {
+                    case Config.Bustupenum.Legacy:
+                        BindAllFilesIn(
+                            Path.Combine("OptionalModFiles", "Bustup", "Legacy"),
+                            modDir, criFsApi, modId
+                        );
+                    break;
+
+                    case Config.Bustupenum.L7M3:
+                        BindAllFilesIn(
+                            Path.Combine("OptionalModFiles", "Bustup", "L7M3", "Universal"),
+                            modDir, criFsApi, modId
+                        );
+
+                        var outfit = _configuration.PTOutfit;
+
+                    if (outfit == Config.PTenum.RedandWhite ||
+                        outfit == Config.PTenum.PureWhite ||
+                        outfit == Config.PTenum.Off)
+                    {
+                        string selected = outfit switch
+                        {
+                            Config.PTenum.RedandWhite => "RedWhitePT",
+                            Config.PTenum.PureWhite => "WhitePT",
+                            _ => "DefaultPT"
+                        };
+
+                        BindAllFilesIn(
+                            Path.Combine("OptionalModFiles", "Bustup", "L7M3", selected),
+                            modDir, criFsApi, modId
+                        );
+                    }
+                    break;
+                }
             }
 
             // Winter Casual
@@ -54,7 +84,7 @@ namespace RedRose
                 {
                     Config.WinterCasualenum.Yukari => "Yukari",
                     Config.WinterCasualenum.Yukiko => "Yukiko",
-                    _ => "BlueDress"
+                    Config.WinterCasualenum.BlueDress => "BlueDress"
                 };
 
                 BindAllFilesIn(
@@ -63,25 +93,37 @@ namespace RedRose
                 );
             }
 
-            // Fuuka Dress
-            if (_configuration.FuukaDress == Config.FuukaDressenum.WhiteRibbon ||
-                _configuration.FuukaDress == Config.FuukaDressenum.BlueRibbon)
+            // Summer Casual
+            if (_configuration.FuukaDress == Config.FuukaDressenum.FuukaWhiteRibbon ||
+                _configuration.FuukaDress == Config.FuukaDressenum.FuukaBlueRibbon ||
+                _configuration.FuukaDress == Config.FuukaDressenum.Mitsuru ||
+                _configuration.FuukaDress == Config.FuukaDressenum.Eiko)
             {
-                string selected =
-                    _configuration.FuukaDress == Config.FuukaDressenum.WhiteRibbon ? "White" : "Blue";
+                string selected = _configuration.FuukaDress switch
+                {
+                    Config.FuukaDressenum.FuukaWhiteRibbon => "FuukaWhiteRibbon",
+                    Config.FuukaDressenum.FuukaBlueRibbon => "FuukaBlueRibbon",
+                    Config.FuukaDressenum.Mitsuru => "Mitsuru",
+                    Config.FuukaDressenum.Eiko => "Eiko"
+                };
 
                 BindAllFilesIn(
-                        Path.Combine("OptionalModFiles", "FuukaDress", selected),
+                        Path.Combine("OptionalModFiles", "SummerCasual", selected),
                         modDir, criFsApi, modId
                      );
             }
 
              // Midwinter Uniform
             if (_configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise ||
-                _configuration.MidwinterUniform == Config.MidwinterUniformenum.NoGlovesNoScarf)
+                _configuration.MidwinterUniform == Config.MidwinterUniformenum.NoGlovesNoScarf ||
+                _configuration.MidwinterUniform == Config.MidwinterUniformenum.FurCoat)
             {
-                string selected =
-                    _configuration.MidwinterUniform == Config.MidwinterUniformenum.Rise ? "Rise" : "NoGlovesNoScarf";
+                string selected = _configuration.MidwinterUniform switch
+                {
+                    Config.MidwinterUniformenum.NoGlovesNoScarf => "NoGlovesNoScarf",
+                    Config.MidwinterUniformenum.Rise => "Rise",
+                    Config.MidwinterUniformenum.FurCoat => "FurCoat"
+                };
 
                 BindAllFilesIn(
                     Path.Combine("OptionalModFiles", "MidwinterUniform", selected),
@@ -90,36 +132,57 @@ namespace RedRose
             }
 
             // Midwinter Casual
-            if (_configuration.MidwinterCasual == Config.MidwinterCasualenum.Rise)
+            if (_configuration.MidwinterCasual == Config.MidwinterCasualenum.Rise ||
+                _configuration.MidwinterCasual == Config.MidwinterCasualenum.FurCoat)
             {
+                string selected =
+                _configuration.MidwinterCasual == Config.MidwinterCasualenum.Rise ? "Rise" : "FurCoat";
+
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "MidwinterCasual", "Rise"),
+                    Path.Combine("OptionalModFiles", "MidwinterCasual", selected),
                     modDir, criFsApi, modId
                 );
             }
 
             // Summer Uniform
-            if (_configuration.SummerUniform == Config.SummerUniformenum.WhiteShirt)
+            if (_configuration.SummerUniform == Config.SummerUniformenum.WhiteShirt ||
+                _configuration.SummerUniform == Config.SummerUniformenum.Kotomo)
             {
+                string selected =
+                _configuration.SummerUniform == Config.SummerUniformenum.WhiteShirt ? "WhiteShirt" : "Kortomo";
+
                 BindAllFilesIn(
-                    Path.Combine("OptionalModFiles", "SummerUniform", "WhiteShirt"),
+                    Path.Combine("OptionalModFiles", "SummerUniform", selected),
                     modDir, criFsApi, modId
                 );
             }
-            
+
             // Tracksuit 
             if (_configuration.Tracksuit == Config.Tracksuitenum.BlackTracksuit ||
-                _configuration.Tracksuit == Config.Tracksuitenum.ConceptArt)
+                _configuration.Tracksuit == Config.Tracksuitenum.ConceptArtTracksuit ||
+                _configuration.Tracksuit == Config.Tracksuitenum.Tamayo)
             {
-                string selected =
-                    _configuration.Tracksuit == Config.Tracksuitenum.BlackTracksuit ? "Black" : "ConceptArt";
+                string selected = _configuration.Tracksuit switch
+                {
+                    Config.Tracksuitenum.BlackTracksuit => "Black",
+                    Config.Tracksuitenum.ConceptArtTracksuit => "ConceptArt",
+                    Config.Tracksuitenum.Tamayo => "Tamayo"
+                };
 
                 BindAllFilesIn(
-                        Path.Combine("OptionalModFiles", "Tracksuit", selected),
+                        Path.Combine("OptionalModFiles", "Workout", selected),
                         modDir, criFsApi, modId
                      );
             }
 
+            // Winter Uniform
+            if (_configuration.WinterUniform == Config.WinterUniformenum.Turtleneck)
+            {
+                BindAllFilesIn(
+                        Path.Combine("OptionalModFiles", "WinterUniform", "Turtleneck"),
+                        modDir, criFsApi, modId
+                     );
+            }
 
             // Lawson
             if (_configuration.Lawson)
