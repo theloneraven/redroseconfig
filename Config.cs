@@ -60,6 +60,7 @@ namespace RedRose.Configuration
             Yukari,
             Yukiko,
             BlueDress,
+            ComfyHoodie,
         }
 
         public enum MidwinterUniformenum
@@ -88,6 +89,22 @@ namespace RedRose.Configuration
         {
             Default,
             Turtleneck,
+        }
+
+        public enum Loungewearenum
+        {
+            Default,
+            StarPajamas,
+        }
+
+        public enum Incognitoenum
+        {
+            Off,
+            Default,
+            BlueDress,
+            Yukari,
+            Yukiko,
+            ComfyHoodie,
         }
 
 
@@ -148,31 +165,45 @@ namespace RedRose.Configuration
         public Tracksuitenum Tracksuit { get; set; }
 
         [Category("Outfits")]
+        [DisplayName("Loungewear Outfit")]
+        [Description("Choose the loungewear outfit.")]
+        [DefaultValue(Loungewearenum.Default)]
+        [Display(Order = 9)]
+        public Loungewearenum Loungewear { get; set; }
+
+        [Category("Outfits")]
+        [DisplayName("Incognito Outfit")]
+        [Description("Overhaul the incognito outfit with winter casual instead.")]
+        [DefaultValue(Incognitoenum.Off)]
+        [Display(Order = 10)]
+        public Incognitoenum Incognito { get; set; }
+
+        [Category("Outfits")]
         [DisplayName("Lawson Outfit over 777 uniform")]
         [Description("Yeah")]
         [DefaultValue(false)]
-        [Display(Order = 9)]
+        [Display(Order = 11)]
         public bool Lawson { get; set; } = false;
 
         [Category("Outfits")]
         [DisplayName("Phantom Thief Outfit Overhaul")]
         [Description("Overhauls Kasumi's PT outfit with a a gold and whtie version or red, gold, and white version.")]
         [DefaultValue(PTenum.Off)]
-        [Display(Order = 10)]
+        [Display(Order = 12)]
         public PTenum PTOutfit { get; set; }
 
         [Category("Misc")]
         [DisplayName("No AOA Art")]
         [Description("No AOA art. Just shows the model.")]
         [DefaultValue(AOAenum.Off)]
-        [Display(Order = 11)]
+        [Display(Order = 13)]
         public AOAenum NoAOA { get; set; }
 
         [Category("Misc")]
         [DisplayName("Menu Art")]
         [Description("Choose the style of art you see in the menus")]
         [DefaultValue(Menuenum.L7M3)]
-        [Display(Order = 12)]
+        [Display(Order = 14)]
         public Menuenum Menu { get; set; }
     }
 

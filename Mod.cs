@@ -36,55 +36,19 @@ namespace RedRose
             if (criFsCtl == null || !criFsCtl.TryGetTarget(out var criFsApi)) { _logger.WriteLine("CRI FS Emu missing → config binds broken.", System.Drawing.Color.Red); return; }
             if (costumeCtl == null || !costumeCtl.TryGetTarget(out var costumeApi)) { _logger.WriteLine("Costume API missing → Costumes broken.", System.Drawing.Color.Red); return; }
 
-            // Bustups
-            {
-                switch (_configuration.Bustup)
-                {
-                    case Config.Bustupenum.Legacy:
-                        BindAllFilesIn(
-                            Path.Combine("OptionalModFiles", "Bustup", "Legacy"),
-                            modDir, criFsApi, modId
-                        );
-                    break;
-
-                    case Config.Bustupenum.L7M3:
-                        BindAllFilesIn(
-                            Path.Combine("OptionalModFiles", "Bustup", "L7M3", "Universal"),
-                            modDir, criFsApi, modId
-                        );
-
-                        var outfit = _configuration.PTOutfit;
-
-                    if (outfit == Config.PTenum.RedandWhite ||
-                        outfit == Config.PTenum.PureWhite ||
-                        outfit == Config.PTenum.Off)
-                    {
-                        string selected = outfit switch
-                        {
-                            Config.PTenum.RedandWhite => "RedWhitePT",
-                            Config.PTenum.PureWhite => "WhitePT",
-                            _ => "DefaultPT"
-                        };
-
-                        BindAllFilesIn(
-                            Path.Combine("OptionalModFiles", "Bustup", "L7M3", selected),
-                            modDir, criFsApi, modId
-                        );
-                    }
-                    break;
-                }
-            }
-
             // Winter Casual
             if (_configuration.WinterCasual == Config.WinterCasualenum.Yukari ||
                 _configuration.WinterCasual == Config.WinterCasualenum.Yukiko ||
-                _configuration.WinterCasual == Config.WinterCasualenum.BlueDress)
+                _configuration.WinterCasual == Config.WinterCasualenum.BlueDress ||
+                _configuration.WinterCasual == Config.WinterCasualenum.ComfyHoodie
+                )
             {
                 string selected = _configuration.WinterCasual switch
                 {
                     Config.WinterCasualenum.Yukari => "Yukari",
                     Config.WinterCasualenum.Yukiko => "Yukiko",
-                    Config.WinterCasualenum.BlueDress => "BlueDress"
+                    Config.WinterCasualenum.BlueDress => "BlueDress",
+                    Config.WinterCasualenum.ComfyHoodie => "ComfyHoodie"
                 };
 
                 BindAllFilesIn(
@@ -184,6 +148,37 @@ namespace RedRose
                      );
             }
 
+            // Loungewear
+            if (_configuration.Loungewear == Config.Loungewearenum.StarPajamas)
+            {
+                BindAllFilesIn(
+                        Path.Combine("OptionalModFiles", "Loungewear", "StarPajamas"),
+                        modDir, criFsApi, modId
+                     );
+            }
+
+            // Incognito
+            if (_configuration.Incognito == Config.Incognitoenum.Default ||
+                _configuration.Incognito == Config.Incognitoenum.BlueDress ||
+                _configuration.Incognito == Config.Incognitoenum.ComfyHoodie ||
+                _configuration.Incognito == Config.Incognitoenum.Yukari ||
+                _configuration.Incognito == Config.Incognitoenum.Yukiko)
+            {
+                string selected = _configuration.Incognito switch
+                {
+                Config.Incognitoenum.Default => "Default",
+                Config.Incognitoenum.BlueDress => "BlueDress",
+                Config.Incognitoenum.ComfyHoodie => "ComfyHoodie",
+                Config.Incognitoenum.Yukari => "Yukari",
+                Config.Incognitoenum.Yukiko => "Yukiko"
+                };
+
+                BindAllFilesIn(
+                        Path.Combine("OptionalModFiles", "Incognito", selected),
+                        modDir, criFsApi, modId
+                     );
+            }
+
             // Lawson
             if (_configuration.Lawson)
             {
@@ -230,7 +225,65 @@ namespace RedRose
                 costumeApi.AddCostumesFolder(modDir, costumesFolder);
             }
             
-        }
+            // Bustups
+            {
+                if (_configuration.Bustup == Config.Bustupenum.Legacy)
+                {
+                    BindAllFilesIn(
+                       Path.Combine("OptionalModFiles", "Bustup", "Legacy"),
+                       modDir, criFsApi, modId
+                   );
+
+                    if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
+                        _configuration.PTOutfit == Config.PTenum.RedandWhite)
+                        {
+                            string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+
+                            BindAllFilesIn(
+                                Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bustup"),
+                                modDir, criFsApi, modId
+                            );
+                        }
+                }
+
+                else if (_configuration.Bustup == Config.Bustupenum.Default && (_configuration.PTOutfit == Config.PTenum.PureWhite || _configuration.PTOutfit == Config.PTenum.RedandWhite))
+                {
+                    string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+
+                    BindAllFilesIn(
+                       Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bustup"),
+                       modDir, criFsApi, modId
+                   );
+                }
+                
+                else if (_configuration.Bustup == Config.Bustupenum.L7M3)
+                {
+                     BindAllFilesIn(
+                       Path.Combine("OptionalModFiles", "Bustup", "L7M3", "Universal"),
+                       modDir, criFsApi, modId
+                    );
+
+                    if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
+                        _configuration.PTOutfit == Config.PTenum.RedandWhite)
+                        {
+                            string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "WhitePT" : "RedWhitePT";
+
+                            BindAllFilesIn(
+                                Path.Combine("OptionalModFiles", "Bustup", "L7M3", selected),
+                            modDir, criFsApi, modId
+                            );
+                        }
+                    else
+                    {
+                         BindAllFilesIn(
+                                Path.Combine("OptionalModFiles", "Bustup", "L7M3", "DefaultPT"),
+                            modDir, criFsApi, modId
+                            );
+                    }
+
+                }
+            }
+        }    
 
         /// <summary>
         /// recursively enumerates all files under the given “subPath” (relative to the mod folder),
