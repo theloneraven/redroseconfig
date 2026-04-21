@@ -24,6 +24,8 @@ namespace RedRose.Configuration
             FuukaBlueRibbon,
             Mitsuru,
             Eiko,
+            TsubasaMinimal,
+            Tsubasa,
         }
 
         public enum Tracksuitenum
@@ -39,6 +41,7 @@ namespace RedRose.Configuration
             Off,
             PureWhite,
             RedandWhite,
+            PinkandWhite,
         }
 
         public enum AOAenum
@@ -61,6 +64,7 @@ namespace RedRose.Configuration
             Yukiko,
             BlueDress,
             ComfyHoodie,
+            Pink,
         }
 
         public enum MidwinterUniformenum

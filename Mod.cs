@@ -40,7 +40,8 @@ namespace RedRose
             if (_configuration.WinterCasual == Config.WinterCasualenum.Yukari ||
                 _configuration.WinterCasual == Config.WinterCasualenum.Yukiko ||
                 _configuration.WinterCasual == Config.WinterCasualenum.BlueDress ||
-                _configuration.WinterCasual == Config.WinterCasualenum.ComfyHoodie
+                _configuration.WinterCasual == Config.WinterCasualenum.ComfyHoodie ||
+                _configuration.WinterCasual == Config.WinterCasualenum.Pink
                 )
             {
                 string selected = _configuration.WinterCasual switch
@@ -48,7 +49,8 @@ namespace RedRose
                     Config.WinterCasualenum.Yukari => "Yukari",
                     Config.WinterCasualenum.Yukiko => "Yukiko",
                     Config.WinterCasualenum.BlueDress => "BlueDress",
-                    Config.WinterCasualenum.ComfyHoodie => "ComfyHoodie"
+                    Config.WinterCasualenum.ComfyHoodie => "ComfyHoodie",
+                    Config.WinterCasualenum.Pink => "Pink"
                 };
 
                 BindAllFilesIn(
@@ -61,14 +63,18 @@ namespace RedRose
             if (_configuration.FuukaDress == Config.FuukaDressenum.FuukaWhiteRibbon ||
                 _configuration.FuukaDress == Config.FuukaDressenum.FuukaBlueRibbon ||
                 _configuration.FuukaDress == Config.FuukaDressenum.Mitsuru ||
-                _configuration.FuukaDress == Config.FuukaDressenum.Eiko)
+                _configuration.FuukaDress == Config.FuukaDressenum.Eiko ||
+                _configuration.FuukaDress == Config.FuukaDressenum.Tsubasa ||
+                _configuration.FuukaDress == Config.FuukaDressenum.TsubasaMinimal)
             {
                 string selected = _configuration.FuukaDress switch
                 {
                     Config.FuukaDressenum.FuukaWhiteRibbon => "FuukaWhiteRibbon",
                     Config.FuukaDressenum.FuukaBlueRibbon => "FuukaBlueRibbon",
                     Config.FuukaDressenum.Mitsuru => "Mitsuru",
-                    Config.FuukaDressenum.Eiko => "Eiko"
+                    Config.FuukaDressenum.Eiko => "Eiko",
+                    Config.FuukaDressenum.Tsubasa => "Tsubasa",
+                    Config.FuukaDressenum.TsubasaMinimal => "TsubasaMinimal"
                 };
 
                 BindAllFilesIn(
@@ -212,9 +218,15 @@ namespace RedRose
 
             // PT Outfit
             if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
-                _configuration.PTOutfit == Config.PTenum.RedandWhite)
+                _configuration.PTOutfit == Config.PTenum.RedandWhite ||
+                _configuration.PTOutfit == Config.PTenum.PinkandWhite)
             {
-                string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+                string selected = _configuration.PTOutfit switch
+                {
+                    Config.PTenum.PureWhite => "PureWhite",
+                    Config.PTenum.RedandWhite => "RedWhite",
+                    Config.PTenum.PinkandWhite => "PinkWhite"
+                };
 
                 BindAllFilesIn(
                        Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bind"),
@@ -235,9 +247,15 @@ namespace RedRose
                    );
 
                     if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
-                        _configuration.PTOutfit == Config.PTenum.RedandWhite)
+                        _configuration.PTOutfit == Config.PTenum.RedandWhite ||
+                        _configuration.PTOutfit == Config.PTenum.PinkandWhite)
                         {
-                            string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+                            string selected = _configuration.PTOutfit switch
+                            {
+                                Config.PTenum.PureWhite => "PureWhite",
+                                Config.PTenum.RedandWhite => "RedWhite",
+                                Config.PTenum.PinkandWhite => "PinkWhite"
+                            };
 
                             BindAllFilesIn(
                                 Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bustup"),
@@ -246,9 +264,14 @@ namespace RedRose
                         }
                 }
 
-                else if (_configuration.Bustup == Config.Bustupenum.Default && (_configuration.PTOutfit == Config.PTenum.PureWhite || _configuration.PTOutfit == Config.PTenum.RedandWhite))
+                else if (_configuration.Bustup == Config.Bustupenum.Default && (_configuration.PTOutfit == Config.PTenum.PureWhite || _configuration.PTOutfit == Config.PTenum.RedandWhite || _configuration.PTOutfit == Config.PTenum.PinkandWhite))
                 {
-                    string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "PureWhite" : "RedWhite";
+                            string selected = _configuration.PTOutfit switch
+                            {
+                                Config.PTenum.PureWhite => "PureWhite",
+                                Config.PTenum.RedandWhite => "RedWhite",
+                                Config.PTenum.PinkandWhite => "PinkWhite"
+                            };
 
                     BindAllFilesIn(
                        Path.Combine("OptionalModFiles", "PTOutfit", selected, "Bustup"),
@@ -264,9 +287,15 @@ namespace RedRose
                     );
 
                     if (_configuration.PTOutfit == Config.PTenum.PureWhite ||
-                        _configuration.PTOutfit == Config.PTenum.RedandWhite)
+                        _configuration.PTOutfit == Config.PTenum.RedandWhite ||
+                        _configuration.PTOutfit == Config.PTenum.PinkandWhite)
                         {
-                            string selected = (_configuration.PTOutfit == Config.PTenum.PureWhite) ? "WhitePT" : "RedWhitePT";
+                            string selected = _configuration.PTOutfit switch
+                            {
+                                Config.PTenum.PureWhite => "PureWhite",
+                                Config.PTenum.RedandWhite => "RedWhite",
+                                Config.PTenum.PinkandWhite => "RedWhite"
+                            };
 
                             BindAllFilesIn(
                                 Path.Combine("OptionalModFiles", "Bustup", "L7M3", selected),
