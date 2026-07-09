@@ -1,0 +1,7 @@
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/RedRose.dll
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/RedRose.deps.json
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/CriFs.V2.Hook.Interfaces.dll
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/CriFsV2Lib.Definitions.dll
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/P5R.CostumeFramework.Interfaces.dll
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/Reloaded.Hooks.Definitions.dll
+/run/media/raven/Josuke/Modding/redroseconfig/build/publish/Reloaded.Hooks.ReloadedII.Interfaces.dll

@@ -305,7 +305,7 @@ namespace RedRose
                     else
                     {
                          BindAllFilesIn(
-                                Path.Combine("OptionalModFiles", "Bustup", "L7M3", "DefaultPT"),
+                                Path.Combine("OptionalModFiles", "Bustup", "L7M3", "Default"),
                             modDir, criFsApi, modId
                             );
                     }
